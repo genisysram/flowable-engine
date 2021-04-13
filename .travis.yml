@@ -1,20 +1,12 @@
 arch:
     - amd64
     - ppc64le
+dist: bionic    
     
 language: java
 jdk:
   - openjdk8
   - openjdk11
-before_install:
-      #the default maven version is not  supporting , hence installing maven 3.6.3
-  - |
-    if [[ "$TRAVIS_CPU_ARCH" = "ppc64le" ]]; then
-        mkdir -p /opt/maven
-        curl https://downloads.apache.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz|tar -xz --strip 1 -C /opt/maven
-        export MAVEN_HOME=/opt/maven
-        export PATH=${MAVEN_HOME}/bin:${PATH}
-    fi  
 
 
 
