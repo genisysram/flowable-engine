@@ -11,5 +11,4 @@ jdk:
 
 
 script:
-       - travis_wait 20
-       - mvn clean install
+       travis_wait 20 mvn clean install
